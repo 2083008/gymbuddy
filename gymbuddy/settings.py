@@ -31,7 +31,6 @@ ALLOWED_HOSTS = ['127.0.0.1', 'alexsmith372.pythonanywhere.com']
 # Application definition
 
 INSTALLED_APPS = [
-    'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -39,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'weightlifting_app',
     'social_django',
+    'django.contrib.admin',
 ]
 
 MIDDLEWARE = [
@@ -120,8 +120,6 @@ LOGIN_REDIRECT_URL = 'home'
 SOCIAL_AUTH_TWITTER_KEY = 'bCI2ZIcuWRR1SilbaElVBmq5a'
 SOCIAL_AUTH_TWITTER_SECRET = 'kruXsXUkdkVDxFiQj6oJBPo2mpr7sU1vamOFXzxy7UqVyetNGN'
 
-SOCIAL_AUTH_FACEBOOK_KEY = '416368618756920'  # App ID
-SOCIAL_AUTH_FACEBOOK_SECRET = 'f19d2b601487bb78a231c3544193c945'  # App Secret
 
 
 
