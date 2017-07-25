@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}
+Form results
+{% endblock %}
+
+{% block content %}
+
+<h1>Form submitted, here are the values</h1> 
+
+<h3>Firstname</h3>
+
+{{form.firstname }}
+
+<h3>Secondname</h3>
+
+{{form.lastname }}
+
+<h3>Gender</h3>
+
+{{ form.gender}}
+
+{% endblock %}

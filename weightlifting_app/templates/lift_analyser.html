@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<div class="container">
+    <form action="/submit_lifts/" method="post">
+    {% csrf_token %}
+
+        Bench:<br>
+        <input type="text" id="bench" name="bench"><br>
+        Squat:<br>
+        <input type="text" id="squat" name="squat"><br>
+        Deadlift:<br>
+        <input type="text" id="deadlift" name="deadlift"><br>
+        OHP:<br>
+        <input type="text" id="ohp" name="ohp"><br>
+
+        <button type="button" onclick="main()">Click me</button>
+    </form>
+</div>
+
+<div id="barchart_values" style="width: 900px; height: 300px;"></div>
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script src="{% static 'js/lifts_form.js' %}"></script>
+
+{% endblock %}
