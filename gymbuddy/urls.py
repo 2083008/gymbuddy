@@ -23,5 +23,6 @@ urlpatterns = [
     url(r'^create_program/', views.create_program, name='create_program'),
     url(r'^submit_form/', views.submit_form, name='submit_form'),
     url(r'^lift_analyser/', views.lift_analyser, name='lift_analyser'),
+    url(r'^sign_in/', views.sign_in, name='sign_in'),
     #url(r'^$', 'index', name='index'),
 ]
