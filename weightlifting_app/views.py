@@ -1,4 +1,5 @@
 from django.shortcuts import render, HttpResponse
+from django.contrib.auth.decorators import login_required
 
 def index(request):
     return render(request,'index.html')
@@ -19,3 +20,7 @@ def lift_analyser(request):
 
 def sign_in(request):
     return render(request, 'sign_in.html')
+
+@login_required
+def home(request):
+    return render(request, 'core/home.html')

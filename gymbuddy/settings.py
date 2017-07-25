@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'weightlifting_app',
+    'social_django',
 ]
 
 MIDDLEWARE = [
@@ -48,6 +49,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'social_django.middleware.SocialAuthExceptionMiddleware',
 ]
 
 ROOT_URLCONF = 'gymbuddy.urls'
@@ -63,6 +65,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'social_django.context_processors.backends',  # <--
+                'social_django.context_processors.login_redirect',
             ],
         },
     },
@@ -99,6 +103,26 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+
+#OATH
+
+AUTHENTICATION_BACKENDS = (
+    'social_core.backends.twitter.TwitterOAuth',
+    'social_core.backends.facebook.FacebookOAuth2',
+
+    'django.contrib.auth.backends.ModelBackend',
+)
+
+LOGIN_URL = 'login'
+LOGOUT_URL = 'logout'
+LOGIN_REDIRECT_URL = 'home'
+
+SOCIAL_AUTH_TWITTER_KEY = 'bCI2ZIcuWRR1SilbaElVBmq5a'
+SOCIAL_AUTH_TWITTER_SECRET = 'kruXsXUkdkVDxFiQj6oJBPo2mpr7sU1vamOFXzxy7UqVyetNGN'
+
+SOCIAL_AUTH_FACEBOOK_KEY = '2333849553505946'  # App ID
+SOCIAL_AUTH_FACEBOOK_SECRET = '9ae4b352e12673890cde37503d8cc62d'  # App Secret
+
 
 
 # Internationalization
